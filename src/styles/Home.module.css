@@ -47,10 +47,42 @@
   padding: 24px 20px;
 }
 
-.footer a {
+.footer button {
   padding: 1rem 2rem;
-  background: #202024;
   border-radius: 5px;
 
   color: #996dff;
+  background: transparent;
+  border: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 120px;
+  border-radius: 5px;
+  color: #333;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  inset: 0;
+}
+
+.closeModalButton {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 16px;
+  background: #8257e5;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
 }

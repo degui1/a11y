@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Head from "next/head";
+import * as Dialog from "@radix-ui/react-dialog"
 
 import Logo from '@/assets/logo.svg'
 import styles from '@/styles/Home.module.css'
-import Head from "next/head";
 
 export default function Home() {
   return (      
@@ -44,9 +45,30 @@ export default function Home() {
         <Image src={Logo}  width={143} alt=""/>
         
         <nav className={styles.nav} aria-label="Rodapé">
-          <a href="https://github.com/degui1">
-            Termos de uso
-          </a>
+          <Dialog.Root>
+            <Dialog.Trigger>
+              <button>
+                Termos de uso
+              </button>
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay className={styles.overlay} />
+
+              <Dialog.Content className={styles.modal}>
+                <Dialog.Title>
+                  Termos de uso
+                </Dialog.Title>
+                <Dialog.Description>
+                  Esses são os termos de uso
+                </Dialog.Description>
+                <Dialog.Close asChild>
+                  <button className={styles.closeModalButton}>
+                    Fechar
+                  </button>
+                </Dialog.Close>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
         </nav>
       </footer>
     </>
